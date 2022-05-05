@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Gapi() {
+function Gapi(props) {
     var gapi = window.gapi
     /* 
       Update with your own Client Id and Api key 
@@ -21,29 +21,26 @@ function Gapi() {
           scope: SCOPES,
         })
   
-        gapi.client.load('calendar', 'v3', () => console.log('bam!'))
-  
+        gapi.client.load('calendar', 'v3', () => console.log('working!'))
+        
+
         gapi.auth2.getAuthInstance().signIn()
         .then(() => {
           
           var event = {
-            'summary': 'Awesome Event!',
-            'location': '800 Howard St., San Francisco, CA 94103',
-            'description': 'Really great refreshments',
+            'summary': props.agenda,
+            'location': 'India',
+            'description': props.desc,
             'start': {
-              'dateTime': '2020-06-28T09:00:00-07:00',
-              'timeZone': 'America/Los_Angeles'
+              'dateTime': props.dateTime,
+              'timeZone': 'Asia/Kolkata'
             },
             'end': {
-              'dateTime': '2020-06-28T17:00:00-07:00',
-              'timeZone': 'America/Los_Angeles'
+              'dateTime': props.dateTime,
+              'timeZone': 'Asia/Kolkata'
             },
             'recurrence': [
               'RRULE:FREQ=DAILY;COUNT=2'
-            ],
-            'attendees': [
-              {'email': 'lpage@example.com'},
-              {'email': 'sbrin@example.com'}
             ],
             'reminders': {
               'useDefault': false,

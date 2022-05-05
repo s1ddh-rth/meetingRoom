@@ -5,22 +5,24 @@ import Calendar from 'react-calendar';
 
 function Form() {
     const [value, onChange] = useState(new Date());
+    const [agenda, setAgenda] = useState();
+    const [desc, setDesc] = useState();
   return (
     <div className='formDiv'>
         <form>
             <label>Meeting Room
-                <input type="text" />
+                <input type="text" value={agenda} onChange={setAgenda} />
             </label>
             <label>Enter your Name
                 <input type="text" />
             </label>
             <label>Meeting Description
-                <input type="text" />
+                <input type="text" value={desc} onChange={setDesc} />
             </label>
             
             <Calendar onChange={onChange} value={value} />
 
-            <Gapi />
+            <Gapi agenda={agenda} desc={desc} dateTime={value} />
         </form>
     </div>
   )
