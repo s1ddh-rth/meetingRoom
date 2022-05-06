@@ -4,6 +4,18 @@ import Calendar from 'react-calendar';
 
 
 function Form() {
+    function handleChange(evt) {
+        const value = evt.target.value;
+        setAgenda({
+            agenda: value
+        });
+    }
+    function handleDesc(evt) {
+        const value = evt.target.value;
+        setDesc({
+            desc: value
+        });
+    }
     const [value, onChange] = useState(new Date());
     const [agenda, setAgenda] = useState();
     const [desc, setDesc] = useState();
@@ -11,13 +23,13 @@ function Form() {
     <div className='formDiv'>
         <form>
             <label>Meeting Room
-                <input type="text" value={agenda} onChange={setAgenda} />
+                <input type="text" value={agenda} onChange={handleChange} />
             </label>
             <label>Enter your Name
                 <input type="text" />
             </label>
             <label>Meeting Description
-                <input type="text" value={desc} onChange={setDesc} />
+                <input type="text" value={desc} onChange={handleDesc} />
             </label>
             
             <Calendar onChange={onChange} value={value} />
