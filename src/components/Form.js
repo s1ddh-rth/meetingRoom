@@ -5,16 +5,11 @@ import Calendar from 'react-calendar';
 
 function Form() {
     function handleChange(evt) {
-        const value = evt.target.value;
-        setAgenda({
-            agenda: value
-        });
+        setAgenda(evt.target.value);
     }
     function handleDesc(evt) {
-        const value = evt.target.value;
-        setDesc({
-            desc: value
-        });
+        
+        setDesc(evt.target.value);
     }
     const [value, onChange] = useState(new Date());
     const [agenda, setAgenda] = useState();
@@ -35,6 +30,7 @@ function Form() {
             <Calendar onChange={onChange} value={value} />
 
             <Gapi agenda={agenda} desc={desc} dateTime={value} />
+            
         </form>
     </div>
   )

@@ -5,8 +5,8 @@ function Gapi(props) {
     /* 
       Update with your own Client Id and Api key 
     */
-    var CLIENT_ID = ""
-    var API_KEY = ""
+    var CLIENT_ID = "496320596315-n1vtfd5c46ci84h0opj35i88sgc39fa2.apps.googleusercontent.com"
+    var API_KEY = "AIzaSyCNrI0SJy8TozB-jY1-NuRzK28lUAV2Lyg"
     var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"]
     var SCOPES = "https://www.googleapis.com/auth/calendar.events"
   
