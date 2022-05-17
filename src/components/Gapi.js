@@ -9,7 +9,7 @@ function Gapi(props) {
     var API_KEY = "AIzaSyCNrI0SJy8TozB-jY1-NuRzK28lUAV2Lyg"
     var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"]
     var SCOPES = "https://www.googleapis.com/auth/calendar.events"
-  
+    console.log(props.data);
     const handleClick = () => {
       gapi.load('client:auth2', () => {
         console.log('loaded client')
